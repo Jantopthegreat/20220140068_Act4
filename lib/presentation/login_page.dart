@@ -26,6 +26,7 @@ class _LoginPageState extends State<LoginPage> {
     final _formkey = GlobalKey<FormState>();
     return Scaffold(
       body: Form(
+        key: _formkey,
         child:Padding(
           padding: const EdgeInsets.all(16.0),
           child: Column(
@@ -58,7 +59,7 @@ class _LoginPageState extends State<LoginPage> {
                       if (_formkey.currentState!.validate()) {
                         Navigator.pushReplacement(
                           context,
-                          MaterialPageRoute(builder: (context) =>   HomePage()),
+                          MaterialPageRoute(builder: (context) => HomePage()),
                         );
                       }
                     },
