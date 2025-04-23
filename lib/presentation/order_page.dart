@@ -12,6 +12,7 @@ class _OrderPageState extends State<OrderPage> {
   final TextEditingController minumanController = TextEditingController();
   final TextEditingController jumlahMakananController = TextEditingController();
   final TextEditingController jumlahMinumanController = TextEditingController();
+  
   int totalHarga = 0;
   
 
