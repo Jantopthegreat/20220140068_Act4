@@ -64,6 +64,36 @@ class _OrderPageState extends State<OrderPage> {
                 return null;
               },
             ),
+            TextFormField(
+              controller: jumlahMinumanController,
+              decoration: const InputDecoration(labelText: 'Drink QTY Order'),
+              validator: (value) {
+                if (value == null || value.isEmpty) {
+                  return 'Please enter your qty of drink order';
+                }
+                return null;
+              },
+            ),
+             ElevatedButton(
+              onPressed: () {
+                if (_formKey.currentState!.validate()) {
+                  calculateTotalPrice();
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => DetailOrderPage(
+                        jumlahMakanan: jumlahMakananController.text,
+                        jumlahMinuman: jumlahMinumanController.text,
+                        makanan: makananController.text,
+                        minuman: minumanController.text,
+                        totalHarga: totalHarga,
+                      ),
+                    ),
+                  );
+                }
+              },
+              child: Text('Order Now'),
+             )
           ]
         )
       )
